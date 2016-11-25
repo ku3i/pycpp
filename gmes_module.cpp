@@ -29,11 +29,6 @@ public:
 };
 
 class gmesmodule {
-    typedef Empty_Payload               Payload_type;
-    typedef static_vector<Payload_type> Payload_Vector_t;
-    typedef Expert_Vector<Payload_type> Expert_Vector_t;
-    typedef GMES<Expert_Vector_t>       GMES_t;
-
 public:
     gmesmodule(unsigned number_of_experts, double local_learning_rate, double gmes_learning_rate, unsigned experience_size)
     : sensors()
@@ -53,10 +48,10 @@ public:
     ~gmesmodule() { dbg_msg("Destroying gmes module."); }
 
 private:
-    test_space            sensors;
-    Payload_Vector_t      payloads;
-    Expert_Vector_t       experts;
-    GMES_t                gmes;
+    test_space                   sensors;
+    static_vector<Empty_Payload> payloads;
+    Expert_Vector                experts;
+    GMES                         gmes;
 };
 
 extern "C" {
