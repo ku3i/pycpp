@@ -1,11 +1,11 @@
 /* This is a C API for accessing the GMES module from python */
 
 #include <assert.h>
-#include <learning/sensorspace.h>
+#include <common/log_messages.h>
+#include <control/sensorspace.h>
 #include <learning/payload.h>
 #include <learning/expert.h>
 #include <learning/gmes.h>
-#include <common/log_messages.h>
 
 
 class test_space : public sensor_vector {
